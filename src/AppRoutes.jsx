@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Navbar } from './app/components/Navbar'
 import { Home } from './app/pages/Home'
+import { Catalog } from './app/pages/Catalog'
 
 export const AppRoutes = () => {
     return (
@@ -8,6 +9,7 @@ export const AppRoutes = () => {
             <Navbar />
             <Routes>
                 <Route path='/' element={<Home />} />
+                <Route path='/catalog' element={<Catalog />} />
 
                 <Route path='/*' element={<Navigate to="/"/>}/>
             </Routes>
