@@ -21,7 +21,7 @@ import { useState } from "react";
           </li> 
  */
 
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/CartContext.jsx";
 
 import '../styles/cartDropdown.css'
 import CartBookCard from "./CartBookCard.jsx"

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import CartOpened from "./CartOpened.jsx"
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/CartContext.jsx";
 
 import "../styles/cartButton.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
