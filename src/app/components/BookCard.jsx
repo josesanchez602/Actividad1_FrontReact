@@ -1,15 +1,19 @@
 import { useCart } from '../hooks/useCart.js';
+import { Link } from 'react-router-dom';
 
 export function BookCard({ book }) {
   const { add } = useCart();
 
   return (
     <div className="book-card border rounded-md overflow-hidden shadow-sm bg-white">
-      <img
-        src={book.cover}
-        alt={book.title}
-        className="w-full h-48 object-cover"
-      />
+      
+      <Link key={book.id} to={`/books/${book.id}`}>
+        <img
+          src={book.cover}
+          alt={book.title}
+          className="w-full h-48 object-cover"
+        />
+      </Link>
       <div className="p-3">
         <h3 className="font-semibold text-lg">{book.title}</h3>
         <p className="text-sm text-gray-600">{book.author}</p>

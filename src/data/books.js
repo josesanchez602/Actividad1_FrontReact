@@ -6,6 +6,7 @@ export const books = [
     price: 12.99,
     cover: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80',
     genre: 'Classic',
+    description: 'The Odyssey, attributed to Homer, is an epic poem that follows the Greek hero Odysseus on his ten-year journey home after the Trojan War, facing mythical creatures, divine beings, and numerous challenges along the way.',
   },
   {
     id: '9780061120084',
@@ -31,4 +32,5 @@ export const books = [
     cover: 'https://images.unsplash.com/photo-1519681393784-3cdf60d5ed0d?auto=format&fit=crop&w=400&q=80',
     genre: 'Non-fiction',
   },
+  
 ];
