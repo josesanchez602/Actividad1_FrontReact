@@ -1,62 +1,85 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useReducer } from 'react';
 
-const CartContext = createContext();
+const CartContext = createContext(null);
 
-export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-
-  /*
-    Añadir un libro al Carrito.
-    Si ya está, suma 1 a quantity
-    Si no está, lo añade con un nuevo campo "quantity" en 1
-  */
-  const addBook = (book) => {
-    setCart((prev) => {
-      const exists = prev.find((b) => b.id === book.id);
-      if (exists) {
-        
-        return prev.map((b) =>
-          b.id === book.id ? { ...b, quantity: b.quantity + 1 } : b
-        );
-      } else {
-        return [...prev, { ...book, quantity: 1 }];
-      }
-    });
-  };
-
-  /*
-  Quita el libro del carrito, de momento lo quita entero 
-  sin importar la cantidad de ese libro
-   */
-  const removeBook = (book) => {
-    setCart((prev) => {
-        const exists = prev.find((b) => b.id === book.id);
-        if(exists.quantity !== 1){
-          return prev.map((b) =>
-            b.id === book.id ? { ...b, quantity: b.quantity - 1 } : b
-          );
-        }else{
-          return prev.filter((b) => b.id !== book.id);
-          
-        }
-    });
-  };
-
-  const clearCart = () => setCart([]);
-
-  //se cuentan todos los libros + las cantidades de cada uno
-  const totalItems = cart.reduce((acc, b) => acc + b.quantity, 0); 
-
-  const totalprice = Number(cart.reduce( (total,b) =>  total + b.quantity*b.price,0).toFixed(2));
-
-  return (
-    <CartContext.Provider value={{cart,addBook,removeBook,clearCart,totalItems,totalprice}}>
-      {children}
-    </CartContext.Provider>
-  );
-
+const initialState = {
+  items: [], // { id, title, price, cover, qty }
 };
 
+function reducer(state, action) {
+  switch (action.type) {
+    case 'ADD': {
+      const existing = state.items.find((i) => i.id === action.item.id);
+      if (existing) {
+        return {
+          ...state,
+          items: state.items.map((i) =>
+            i.id === action.item.id ? { ...i, qty: i.qty + 1 } : i
+          ),
+        };
+      }
+      return { ...state, items: [...state.items, { ...action.item, qty: 1 }] };
+    }
+    case 'REMOVE_ONE': {
+      const next = state.items
+        .map((i) => (i.id === action.id ? { ...i, qty: i.qty - 1 } : i))
+        .filter((i) => i.qty > 0);
+      return { ...state, items: next };
+    }
+    case 'REMOVE_ALL': {
+      return { ...state, items: state.items.filter((i) => i.id !== action.id) };
+    }
+    case 'CLEAR': {
+      return initialState;
+    }
+    case 'HYDRATE': {
+      return action.payload ?? initialState;
+    }
+    default:
+      return state;
+  }
+}
+
+export function CartProvider({ children }) {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem('cart');
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        dispatch({ type: 'HYDRATE', payload: parsed });
+      }
+    } catch {}
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('cart', JSON.stringify(state));
+    } catch {}
+  }, [state]);
+
+  const totalItems = useMemo(
+    () => state.items.reduce((sum, i) => sum + i.qty, 0),
+    [state.items]
+  );
+  const totalPrice = useMemo(
+    () => state.items.reduce((sum, i) => sum + i.price * i.qty, 0),
+    [state.items]
+  );
+
+  const value = {
+    items: state.items,
+    totalItems,
+    totalPrice,
+    add: (item) => dispatch({ type: 'ADD', item }),
+    removeOne: (id) => dispatch({ type: 'REMOVE_ONE', id }),
+    removeAll: (id) => dispatch({ type: 'REMOVE_ALL', id }),
+    clear: () => dispatch({ type: 'CLEAR' }),
+  };
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+}
 
 export function useCartContext() {
   const ctx = useContext(CartContext);

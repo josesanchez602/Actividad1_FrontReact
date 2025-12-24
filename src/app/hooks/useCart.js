@@ -1,5 +1,5 @@
-import { useCartContext } from "../context/CartContext.jsx";
+import { useCartContext } from '../context/CartContext.jsx';
 
 export function useCart() {
-    return useCartContext();
+  return useCartContext();
 }
