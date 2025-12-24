@@ -10,7 +10,6 @@ export const AppRoutes = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/catalog' element={<Catalog />} />
-
                 <Route path='/*' element={<Navigate to="/"/>}/>
             </Routes>
         </div>
