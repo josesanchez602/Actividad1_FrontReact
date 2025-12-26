@@ -18,42 +18,42 @@ export const BookDetail = () => {
   }
 
   //Renderizar la vista expandida
-  return (
-    <div className='block w-300 h-2/3 '>
-      <div className="book-detail flex border rounded-md shadow-sm bg-white text-black p-4 mx-auto">
-        {/* Imagen y valoracion */}
-        <div className='block w-1/2'>
-          <img
-            src={book.cover}
-            alt={book.title}
-            className='object-cover rounded-md w-full h-96'
-          />
-          <h3 >Score ★★★★☆</h3>
-        </div>
-
-        {/* Información del libro */}
-        <div className='ml-4 block w-1/2 text-start' >
-          <h1 className='text-2xl font-bold mb-2'>{book.title}</h1>
-          <h3 className='mb-1'>Autor: {book.author}</h3>
-          <h3 className='mb-1'>Género: {book.genre}</h3>
-          <p className='mb-3 font-semibold'>Precio: ${book.price.toFixed(2)}</p>
-          <button
-            className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 "
-            onClick={() =>
-              add({ id: book.id, title: book.title, price: book.price, cover: book.cover })
-            }
-          >
-            Añadir al carrito
-          </button>
-        </div>
+return (
+  <div className="book-container">
+    <div className="book-detail">
+      {/* Imagen y valoración */}
+      <div className="book-detail__image">
+        <img
+          src={book.cover}
+          alt={book.title}
+          className="book-detail__cover"
+        />
+        <h3 className="book-detail__score">Score ★★★★☆</h3>
       </div>
 
-      {/* Descripción */}
-      <div className="book-detail flex border rounded-md shadow-sm bg-white text-black p-4 mx-auto">
-        <p className="text-gray-700">
-          {book.description || "Descripción no disponible."}
-        </p>
+      {/* Información del libro */}
+      <div className="book-detail__info">
+        <h1 className="book-detail__title">{book.title}</h1>
+        <h3 className="book-detail__author">Autor: {book.author}</h3>
+        <h3 className="book-detail__genre">Género: {book.genre}</h3>
+        <p className="book-detail__price">Precio: ${book.price.toFixed(2)}</p>
+        <button
+          className="book-detail__button--cart"
+          onClick={() =>
+            add({ id: book.id, title: book.title, price: book.price, cover: book.cover })
+          }
+        >
+          Añadir al carrito
+        </button>
       </div>
     </div>
-    );
-  };
+
+    {/* Descripción */}
+    <div className="book-description">
+      <p className="book-description__text">
+        {book.description || "Descripción no disponible."}
+      </p>
+    </div>
+  </div>
+  );
+};

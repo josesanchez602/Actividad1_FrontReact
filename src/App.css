@@ -40,3 +40,69 @@
 .read-the-docs {
   color: #888;
 }
+
+/*book view*/
+.book-container{
+  width: 1000px;          /* ancho fijo */
+  max-width: 90vw;        /* para pantallas pequeñas */
+  margin: 0 auto;    
+  gap: 1rem;  
+  color: black;
+}
+
+.book-detail {
+  display: flex;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  margin-bottom: 1%;
+  text-align: left;
+}
+
+.book-detail__image {
+  width: 50%;
+  height: 100%;
+}
+
+.book-detail__cover {
+  width: 100%;
+  height: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+}
+
+.book-detail__score {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.book-detail__info {
+  width: 50%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.book-detail__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.book-detail__button--cart{
+  color:white;
+}
+
+.book-description {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  height: 120px; /* altura fija */
+  overflow: hidden;
+}
