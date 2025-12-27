@@ -7,7 +7,7 @@ import "../../styles/BookView.css";
 export const BookDetail = () => {
   //Obtener el id de la URL
   const { id } = useParams();
-  const { add } = useCart();
+  const { addBook } = useCart();
 
   //Buscar el libro correspondiente
   const book = books.find((b) => b.id === id);
@@ -39,11 +39,8 @@ return (
         <p className="bookv-detail__price">Precio: ${book.price.toFixed(2)}</p>
         <button
           className="bookv-detail__button--cart"
-          onClick={() =>
-            add({ id: book.id, title: book.title, price: book.price, cover: book.cover })
-          }
-        >
-          Añadir al carrito
+          onClick={() => addBook(book)}>
+            Añadir al carrito
         </button>
       </div>
     </div>
