@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { books } from '../../data/books.js';
+import { books } from "../../data/book.js";
 import { useCart } from '../hooks/useCart.js';
-
+import "../../styles/BookView.css";
 //TODO opiniones 
 
 export const BookDetail = () => {
