@@ -19,26 +19,26 @@ export const BookDetail = () => {
 
   //Renderizar la vista expandida
 return (
-  <div className="book-container">
-    <div className="book-detail">
+  <div className="bookv-container">
+    <div className="bookv-detail">
       {/* Imagen y valoración */}
-      <div className="book-detail__image">
+      <div className="bookv-detail__image">
         <img
           src={book.cover}
           alt={book.title}
-          className="book-detail__cover"
+          className="bookv-detail__cover"
         />
-        <h3 className="book-detail__score">Score ★★★★☆</h3>
+        <h3 className="bookv-detail__score">Score ★★★★☆</h3>
       </div>
 
       {/* Información del libro */}
-      <div className="book-detail__info">
-        <h1 className="book-detail__title">{book.title}</h1>
-        <h3 className="book-detail__author">Autor: {book.author}</h3>
-        <h3 className="book-detail__genre">Género: {book.genre}</h3>
-        <p className="book-detail__price">Precio: ${book.price.toFixed(2)}</p>
+      <div className="bookv-detail__info">
+        <h1 className="bookv-detail__title">{book.title}</h1>
+        <h3 className="bookv-detail__author">Autor: {book.author}</h3>
+        <h3 className="bookv-detail__genre">Género: {book.genre}</h3>
+        <p className="bookv-detail__price">Precio: ${book.price.toFixed(2)}</p>
         <button
-          className="book-detail__button--cart"
+          className="bookv-detail__button--cart"
           onClick={() =>
             add({ id: book.id, title: book.title, price: book.price, cover: book.cover })
           }
@@ -49,8 +49,8 @@ return (
     </div>
 
     {/* Descripción */}
-    <div className="book-description">
-      <p className="book-description__text">
+    <div className="bookv-description">
+      <p className="bookv-description__text">
         {book.description || "Descripción no disponible."}
       </p>
     </div>
