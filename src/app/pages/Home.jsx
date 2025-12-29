@@ -1,13 +1,10 @@
-<<<<<<< Updated upstream
-
-=======
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/homeView.css";
->>>>>>> Stashed changes
 
 export const Home = () => {
   return (
+
     <div className='containerHome' id="home">
       <div className='containerHome__intro'>
         <h1>Bienvenido a la librería "Relatos de papel"</h1>
