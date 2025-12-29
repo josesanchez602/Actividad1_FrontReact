@@ -68,3 +68,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.nav-link,
+.nav-link:visited,
+.nav-link.active,
+.nav-link:focus,
+.nav__section {
+  color: #213547;
+}
+

@@ -1,6 +1,6 @@
 export function SearchBar({ searchTerm, setSearchTerm }) {
   return (
-    <div className="mb-6">
+    <div>
       <input
         type="text"
         placeholder="Buscar por título"

@@ -11,7 +11,6 @@ export function Catalog() {
 
   return (
     <div className="container mx-auto p-4 mt-20">
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
       <h2 className="text-2xl font-bold mb-4">Catálogo de Libros</h2>
       <BookResults books={filteredBooks} searchTerm={searchTerm} />
