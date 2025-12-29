@@ -52,7 +52,8 @@
 }
 
 .bookv-detail__button--cart{
-  color:white;
+  color: white;
+  background-color: green;
 }
 
 .bookv-description {

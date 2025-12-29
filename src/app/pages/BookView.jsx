@@ -38,7 +38,7 @@ return (
         <h3 className="bookv-detail__genre">Género: {book.genre}</h3>
         <p className="bookv-detail__price">Precio: ${book.price.toFixed(2)}</p>
         <button
-          className="bookv-detail__button--cart"
+          className="bookv-detail__button--cart bg-gray-500"
           onClick={() => addBook(book)}>
             Añadir al carrito
         </button>
