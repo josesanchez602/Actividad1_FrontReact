@@ -1,8 +1,5 @@
-import { useState } from "react";
-
 import { useCart } from "../context/CartContext";
-
-import "../styles/cartBookCard.css";
+import "../../styles/cartBookCard.css";
 
 export default function CartBookCard({ book }) {
   const { addBook, removeBook } = useCart();
@@ -10,7 +7,7 @@ export default function CartBookCard({ book }) {
   return (
     <>
       <li className="cart-item" key={book.id}>
-        <img src={book.imageSrc} alt={book.title} className="cart-image" />
+        <img src={book.cover} alt={book.title} className="cart-image" />
 
         <div className="cart-info">
           <p className="cart-name">{book.title}</p>

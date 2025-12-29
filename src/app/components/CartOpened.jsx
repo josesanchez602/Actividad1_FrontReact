@@ -1,34 +1,10 @@
-
-import { useState } from "react";
-
-/*
-<li className="cart-item" key={book.id}>
-            <img
-              src={book.imageSrc}
-              alt={book.title}
-              className="cart-image"
-            />
-
-            <div className="cart-info">
-              <p className="cart-name">{book.title}</p>
-              <p className="cart-price">
-                {book.price} € 
-              </p>
-              <button onClick={() => removeBook(book)}>-</button>
-              <a>{book.quantity} uds</a>
-              <button onClick={() => addBook(book)}>+</button>
-            </div>
-          </li> 
- */
-
 import { useCart } from "../context/CartContext.jsx";
-
-import '../styles/cartDropdown.css'
+import '../../styles/cartDropdown.css'
 import CartBookCard from "./CartBookCard.jsx"
 
 export default function CartOpened({open}) {
 
-  const { cart,addBook, removeBook,totalprice } = useCart();
+  const { cart, addBook, removeBook,totalprice } = useCart();
   
  return (
 <>

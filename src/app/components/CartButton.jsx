@@ -1,10 +1,8 @@
 import { useState } from "react";
-
 import CartOpened from "./CartOpened.jsx"
 import { useCart } from "../context/CartContext.jsx";
 
-import "../styles/cartButton.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+import "../../styles/cartButton.css";
 
 export default function CartButton() {
   const [open, setOpen] = useState(false);
@@ -16,7 +14,7 @@ export default function CartButton() {
       <div className="cart-container">
         {/* BOTÓN CARRITO */}
         <button className="cart-button" onClick={() => setOpen(!open)}>
-          <i className="fas fa-shopping-cart"></i>
+          <i className="fa-solid fa-cart-shopping"></i>
           {cart.length > 0 && <span className="cart-badge">{totalItems}</span>}
         </button>
         {/*Desplegable boton abierto*/}
