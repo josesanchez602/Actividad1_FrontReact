@@ -1,6 +1,6 @@
 
 /* OVERLAY OSCURO */
-.cart-overlay {
+.cart__overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,11 +10,11 @@
   z-index: 900;
 }
 
-.cart-container {
+.cart__container {
   position: relative;
 }
 
-.cart-button {
+.cart__button {
   background: none;
   border: none;
   cursor: pointer; /*convierte el raton en una mano*/
@@ -22,7 +22,7 @@
   position: relative;
 }
 
-.cart-badge {
+.cart__badge {
   position: absolute; /*Respecto al container*/
   top: -6px;
   right: -8px;
