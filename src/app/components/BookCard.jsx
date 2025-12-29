@@ -1,9 +1,9 @@
-import { useCart } from "../hooks/useCart.js";
+import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
-import "../../styles/BookCart.css";
+import "../../styles/BookCard.css";
 
-export function BookCart( {book} ) {
-    const { cart,addBook,removeBook,clearCart,totalItems,totalprice } = useCart();
+export function BookCard( {book} ) {
+    const { addBook } = useCart();
     const navigate = useNavigate();
 
     return (
@@ -15,9 +15,6 @@ export function BookCart( {book} ) {
                 <div className="book-buttons">
                     <button className="button-add"
                         onClick={() => addBook(book)}>Añadir ${book.price.toFixed(2)}
-                    </button>
-                    <button className="button-remove"
-                        onClick={() => removeBook(book)}>Eliminar
                     </button>
                 </div>
             </div>

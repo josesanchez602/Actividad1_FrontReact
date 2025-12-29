@@ -30,27 +30,6 @@ export const CartProvider = ({ children }) => {
    */
   const removeBook = (book) => {
     setCart((prev) => {
-<<<<<<< HEAD
-      const exists = prev.find((b) => b.id === book.id);
-
-      // Si el libro no está en el carrito, no hacer nada
-      if (!exists) return prev;
-
-      // Si hay más de una unidad, decrementa
-      if (exists.quantity > 1) {
-        return prev.map((b) =>
-          b.id === book.id ? { ...b, quantity: b.quantity - 1 } : b
-        );
-      }
-
-      // Si la cantidad es 0 o negativa, no hacer nada
-      if (exists.quantity <= 0) {
-        return prev;
-      }
-
-      // Si solo hay una unidad, elimina el libro del carrito
-      return prev.filter((b) => b.id !== book.id);
-=======
         const exists = prev.find((b) => b.id === book.id);
         if(exists.quantity !== 1){
           return prev.map((b) =>
@@ -60,7 +39,6 @@ export const CartProvider = ({ children }) => {
           return prev.filter((b) => b.id !== book.id);
           
         }
->>>>>>> ef3e721a434ee22f447e44020e3e7797141a6a02
     });
   };
 
@@ -79,13 +57,4 @@ export const CartProvider = ({ children }) => {
 
 };
 
-
-<<<<<<< HEAD
-export function useCartContext() {
-  const ctx = useContext(CartContext);
-  if (!ctx) throw new Error('useCartContext must be used within CartProvider');
-  return ctx;
-}
-=======
 export const useCart = () => useContext(CartContext);
->>>>>>> ef3e721a434ee22f447e44020e3e7797141a6a02

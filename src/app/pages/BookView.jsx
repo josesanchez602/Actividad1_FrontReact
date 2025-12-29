@@ -1,8 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { books } from "../../data/book.js";
-import { useCart } from '../hooks/useCart.js';
+import { useCart } from '../context/CartContext.jsx';
 import "../../styles/BookView.css";
-//TODO opiniones 
 
 export const BookDetail = () => {
   //Obtener el id de la URL
