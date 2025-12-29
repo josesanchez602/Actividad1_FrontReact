@@ -1,36 +1,35 @@
-.book-cart-box {
+.BookCard__box {
   overflow: hidden;
   border: 1px solid #e5e5e5;
   border-radius: 0.25rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  margin: 0 auto; /* centra la box horizontalmente */
+  margin: 0 auto;
 }
 
-.img-cover {
+.BookCard__cover {
   width: 100%;
   height: 12rem;
   object-fit: cover;
   display: block;
 }
 
-.book-description {
-  padding: 1rem; /* equiv. Tailwind p-4 */
+.BookCard__description {
+  padding: 1rem;
 }
 
-.book-title {
+.BookCard__title {
   font-size: 1.125rem;
   font-weight: 600;
-  display: block;      /* evita flex y mantiene ancho controlado */
-  margin: 0 auto;           /* no empuja el layout */
+  display: block;
+  margin: 0 auto;
   max-width: 100%;
-  min-width: 0;        /* necesario en contenedores flex para permitir ellipsis */
-  /* Evitar desbordes en una línea */
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.book-author {
+.BookCard__author {
   font-size: 0.875rem;
   color: #555;
   margin-bottom: 0.5rem;
@@ -41,26 +40,17 @@
   white-space: nowrap;
 }
 
-.book-buttons {
-    display: flex;
-    gap: 0.1rem;
-    justify-content: space-between; /* distribuye espacio entre botones */
+.BookCard__actions {
+  margin-top: 0.5rem;
 }
 
-/* Hacer que ambos botones ocupen el mismo ancho */
-.book-buttons .button-add,
-.book-buttons .button-remove {
-    height: 4rem;
-    flex: 1 1 0;         /* mismo ancho, crecen por igual */
-    text-align: center;  /* centra el texto dentro del botón */
-    box-sizing: border-box;
-    border-radius: 0.25rem;
-    color: #ffffff;
-}
-
-.button-add {
-  background-color: #26571f ;
-}
-.button-remove {
-  background-color: #612b2b;
+.BookCard__add {
+  display: block;
+  width: 100%;
+  height: 4rem;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  background-color: #26571f;
 }

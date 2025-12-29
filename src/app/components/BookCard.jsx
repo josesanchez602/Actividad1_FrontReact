@@ -7,13 +7,13 @@ export function BookCard( {book} ) {
     const navigate = useNavigate();
 
     return (
-        <div className="book-cart-box">
-            <img src={book.cover} alt={book.title} className="img-cover"/>
-            <div className="book-description">
-                <button className="book-title" onClick={ () => navigate(`/books/${book.id}`) }>{book.title}</button>
-                <p className="book-author">by {book.author}</p>
-                <div className="book-buttons">
-                    <button className="button-add"
+        <div className="BookCard__box">
+            <img src={book.cover} alt={book.title} className="BookCard__cover"/>
+            <div className="BookCard__description">
+                <button className="BookCard__title" onClick={ () => navigate(`/books/${book.id}`) }>{book.title}</button>
+                <p className="BookCard__author">by {book.author}</p>
+                <div className="BookCard__actions">
+                    <button className="BookCard__add"
                         onClick={() => addBook(book)}>Añadir ${book.price.toFixed(2)}
                     </button>
                 </div>
