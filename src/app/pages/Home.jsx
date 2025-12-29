@@ -23,6 +23,7 @@ export const Home = () => {
         <h3>Redirigiendo en 5 segundos</h3>
         <div className="containerHome__loader"></div>
         <button className="containerHome__button--catalog" onClick={() => navigate("/catalog")} >Acceder al catálogo</button>
+        
       </div>
     </div>
   )

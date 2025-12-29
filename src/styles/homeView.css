@@ -1,31 +1,24 @@
 .containerHome {
-  background-color: gray;
-  border-radius: 8px;
-  margin: 0 auto;    
-  gap: 1rem;  
-  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 90vh; 
+  background-color: white; 
   margin: 0;
 }
 
-.containerHome__intro{
-  
-background-color: #8e8e8e; /* El color gris va aquí */
+.containerHome__intro {
+  background-color: #8e8e8e; 
   color: black;
   width: 90%;
-  max-width: 700px; /* Ajustado para que sea más ancho como en la imagen */
+  max-width: 800px;
   padding: 3rem 2rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Opcional: para darle un toque de profundidad */
-  
 }
 
 .containerHome__intro h1,
