@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom'
 import { SearchBar } from './SearchBar.jsx';
 import CartButton from './CartButton'
-
+import { useSearch } from '../context/SearchContext'; // Importa el hook
 export const Navbar = () => {
 
-    const [searchTerm, setSearchTerm] = useState('');
+    // const [searchTerm, setSearchTerm] = useState('');
+    const { searchTerm, setSearchTerm } = useSearch(); // Usa el contexto global
     const location = useLocation();
     const isHome = location.pathname === '/';
 
@@ -23,10 +24,12 @@ export const Navbar = () => {
 
                 {!isHome && (
                     <div className="flex-1 max-w-xl items-center">
-                        <SearchBar 
-                            searchTerm={searchTerm} 
-                            setSearchTerm={setSearchTerm} 
-                        />
+                        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                       {/* // <SearchBar 
+                           //searchTerm={searchTerm} 
+                            //setSearchTerm={setSearchTerm} 
+                            
+                        /> */}
                     </div>
                 )}
 
