@@ -62,4 +62,5 @@
   padding: 1rem;
   height: 120px; /* altura fija */
   overflow: hidden;
+  text-align: center;
 }

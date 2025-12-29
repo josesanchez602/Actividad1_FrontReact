@@ -4,14 +4,28 @@
   margin: 0 auto;    
   gap: 1rem;  
   color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .containerHome__intro{
-  width: 100%;
-  padding: 1rem;
+  
+background-color: #8e8e8e; /* El color gris va aquí */
+  color: black;
+  width: 90%;
+  max-width: 700px; /* Ajustado para que sea más ancho como en la imagen */
+  padding: 3rem 2rem;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Opcional: para darle un toque de profundidad */
+  
 }
 
 .containerHome__intro h1,
@@ -38,5 +52,5 @@
 
 .containerHome__button--catalog{
   background-color: green;
-  margin: 1%
+  margin: 1%;
 }

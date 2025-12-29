@@ -8,12 +8,14 @@ import { SearchProvider } from './app/context/SearchContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <SearchProvider>
+    
       <BrowserRouter>
-        <CartProvider>
-          <AppRoutes/>
-        </CartProvider>
+        <SearchProvider>
+          <CartProvider>
+            <AppRoutes/>
+          </CartProvider>
+        </SearchProvider>
       </BrowserRouter>
-    </SearchProvider>
+    
   </StrictMode>,
 )
