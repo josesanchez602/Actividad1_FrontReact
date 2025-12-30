@@ -1,0 +1,44 @@
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid #6b7280;
+}
+
+.navbar--fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.navbar__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.navbar__search {
+  flex: 1;
+  max-width: 36rem;
+}
+
+.navbar__actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navbar__account {
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+}

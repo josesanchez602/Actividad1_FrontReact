@@ -9,13 +9,13 @@ export default function CartButton() {
   const { cart,  totalItems } = useCart();
   return (
     <>
-      {open && <div className="cart-overlay" onClick={() => setOpen(false)} />}
+      {open && <div className="cart__overlay" onClick={() => setOpen(false)} />}
 
-      <div className="cart-container">
+      <div className="cart__container">
         {/* BOTÓN CARRITO */}
-        <button className="cart-button" onClick={() => setOpen(!open)}>
+        <button className="cart__button" onClick={() => setOpen(!open)}>
           <i className="fa-solid fa-cart-shopping"></i>
-          {cart.length > 0 && <span className="cart-badge">{totalItems}</span>}
+          {cart.length > 0 && <span className="cart__badge">{totalItems}</span>}
         </button>
         {/*Desplegable boton abierto*/}
         <CartOpened open={open}/>

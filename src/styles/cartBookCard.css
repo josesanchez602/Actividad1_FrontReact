@@ -1,68 +1,53 @@
 
 
-.cart-dropdown {
-  position: absolute;
-  right: 0;
-  top: 40px;
-  width: 320px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 6px;
-  padding: 12px;
-  z-index: 1000;
-}
 
 
 
-.cart-item {
+
+.cart__book {
   display: flex;
   gap: 10px;
-  margin-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 
-
-.cart-image {
-  width: 50px;
-  height: 100%;
+.book__image {
+  width: 75px;
+  height: 100px;
   object-fit: cover;
   border-radius: 4px;
 }
 
-.cart-info {
+.book__info {
   flex: 1;
 }
 
-.cart-name {
+.info__name {
   font-size: 14px;
   font-weight: 600;
   margin: 0;
 }
 
-.cart-price {
+.info__price {
   font-size: 13px;
   color: #555;
 }
 
-/* Mantener estilo de items */
-.cart-item {
-  display: flex;
-  gap: 10px;
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 10px;
-}
 
 
-.cart-add-button ,.cart-remove-button {
+
+.info__add-button ,.info__remove-button {
   background: none;
   border: none;
   cursor: pointer; /*convierte el raton en una mano*/
   font-size: 20px; /*tamaño del icono*/
   position: relative;
-
+  padding:0px;
+  margin: 12px;
 }
 
-.cart-add-button :hover ,.cart-remove-button :hover {
+.info__add-button :hover ,.info__remove-button :hover {
   transform: scale(1.2);
 }

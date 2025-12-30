@@ -1,4 +1,19 @@
-.cart-title {
+
+.cart__dropdown {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 320px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 12px;
+  z-index: 1000;
+}
+
+
+.cart__title {
   margin: 0 0 10px;
   font-size: 16px;
   font-weight: bold;
@@ -6,7 +21,7 @@
   border-bottom: 1px solid #000;
 }
 
-.cart-empty {
+.cart__empty {
   font-size: 14px;
   color: #777;
 }
@@ -14,7 +29,7 @@
 
 
 /* Lista scrollable */
-.cart-list-scroll {
+.cart__list-scroll {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -23,22 +38,28 @@
 }
 
 
-.cart-list-scroll::-webkit-scrollbar-thumb {
+.cart__list-scroll::-webkit-scrollbar-thumb {
   background-color: rgba(0,0,0,0.3);
   border-radius: 3px;
 }
 
 /* Scroolbar bonito */
-.cart-list-scroll::-webkit-scrollbar {
+.cart__list-scroll::-webkit-scrollbar {
   width: 6px;
 }
 
+
+.cart__totalprice{
+  padding-top: 10px;
+  border-top: 1px solid #000;
+}
+
 /* Botón "Ver carrito" siempre visible abajo */
-.cart-view-btn {
+.cart__view-btn {
   width: 100%;
   margin-top: 10px;
   padding: 8px;
-  background-color: #000;
+  background-color: #000000;
   color: white;
   border: none;
   border-radius: 4px;
@@ -46,3 +67,7 @@
   flex-shrink: 0; /* para que no se reduzca */
 }
 
+.cart__view-btn:hover {
+  
+  font-size: 110%;
+}
