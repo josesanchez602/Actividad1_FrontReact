@@ -9,6 +9,7 @@ export const Checkout = () => {
     addBook,
     removeBook,
     totalItems,
+    removeAllBook
   } = useCart();
   const navigate = useNavigate();
 
@@ -66,7 +67,7 @@ export const Checkout = () => {
 
                   <button
                     type="button"
-                    onClick={() => removeBook(book)}
+                    onClick={() => removeAllBook(book)}
                     className="Checkout__remove mt-3 flex items-center gap-1 text-xs text-gray-500"
                   >
                     <i className="fa-regular fa-trash-can" />

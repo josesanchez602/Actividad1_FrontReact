@@ -42,6 +42,11 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  const removeAllBook = (book)=> {
+    setCart((prev) =>{
+      return prev.filter((b) => b.id !== book.id);
+    });
+  };
   const clearCart = () => setCart([]);
 
   //se cuentan todos los libros + las cantidades de cada uno
@@ -50,7 +55,7 @@ export const CartProvider = ({ children }) => {
   const totalprice = Number(cart.reduce( (total,b) =>  total + b.quantity*b.price,0).toFixed(2));
 
   return (
-    <CartContext.Provider value={{cart,addBook,removeBook,clearCart,totalItems,totalprice}}>
+    <CartContext.Provider value={{cart,addBook,removeBook,clearCart,totalItems,totalprice,removeAllBook}}>
       {children}
     </CartContext.Provider>
   );
