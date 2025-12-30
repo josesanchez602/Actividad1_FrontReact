@@ -6,6 +6,7 @@ export const books = [
     price: 12.99,
     cover: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80',
     genre: 'Classic',
+    description: 'The Odyssey is Homers epic poem about Odysseus, King of Ithaca, and his arduous 10-year journey home after the Trojan War, filled with mythical monsters, goddesses, and challenges, while back in Ithaca, his faithful wife Penelope fends off suitors, and his son Telemachus seeks news of his father, culminating in Odysseuss disguised return, slaughter of the suitors, and restoration of his kingdom, exploring themes of heroism, loyalty, and homecoming'
   },
   {
     id: '9780061120084',

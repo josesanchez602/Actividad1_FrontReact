@@ -1,12 +1,8 @@
-import { useState } from 'react';
-import { SearchBar } from '../components/SearchBar.jsx';
 import { books } from '../../data/book.js';
 import { useFilteredBooks } from '../hooks/useFilteredBooks.js';
 import { BookResults } from '../components/BookResult.jsx';
 import { useSearch } from '../context/SearchContext'; // Importa el hook
 export function Catalog() {
-  // const [searchTerm, setSearchTerm] = useState('');
-  // const filteredBooks = useFilteredBooks(books, searchTerm);
 
   const { searchTerm } = useSearch(); // Obtiene el término global
   const filteredBooks = useFilteredBooks(books, searchTerm);
