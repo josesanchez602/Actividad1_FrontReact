@@ -18,7 +18,7 @@ export default function CartButton() {
           {cart.length > 0 && <span className="cart__badge">{totalItems}</span>}
         </button>
         {/*Desplegable boton abierto*/}
-        <CartOpened open={open}/>
+      <CartOpened open={ open } setOpen={ setOpen }/>
       </div>
       
     </>

@@ -48,10 +48,18 @@
 .BookCard__add {
   display: block;
   width: 100%;
-  height: 4rem;
+  padding: 4px;
   text-align: center;
   box-sizing: border-box;
   border-radius: 0.25rem;
   color: #ffffff;
   background-color: #26571f;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover */
+.BookCard__add:hover {
+  background-color: #b7e1b2;
+  color: #213547;
 }

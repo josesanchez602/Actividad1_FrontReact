@@ -13,11 +13,9 @@ export const AppRoutes = () => {
             <Navbar />
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/checkout' element={<Checkout />} />
-
-                <Route path='/*' element={<Navigate to="/checkout"/>}/>
                 <Route path='/catalog' element={<Catalog />} />
                 <Route path="/books/:id" element={<BookDetail />} />
+                <Route path='/checkout' element={<Checkout />} />
                 <Route path='/*' element={<Navigate to="/"/>}/>
             </Routes>
         </div>
