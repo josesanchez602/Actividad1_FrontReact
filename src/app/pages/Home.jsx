@@ -9,9 +9,8 @@ export const Home = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigate("/catalog");
-        }, 5000); // 3 segundos
+        }, 5000); 
 
-        // Limpieza del timeout
         return () => clearTimeout(timer);
     }, [navigate]);
     
@@ -22,8 +21,9 @@ export const Home = () => {
         <h1>Bienvenido a la librería "Relatos de papel"</h1>
         <h3>Redirigiendo en 5 segundos</h3>
         <div className="containerHome__loader"></div>
+        <button className="containerHome__button--catalog" onClick={() => navigate("/catalog")} >Acceder al catálogo</button>
+        
       </div>
-      <button className="containerHome__button--catalog" onClick={ () => navigate(`/catalog}`) }>Acceder al catálogo</button>
     </div>
   )
 }
