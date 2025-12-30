@@ -9,9 +9,8 @@ export const Home = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigate("/catalog");
-        }, 5000); // 3 segundos
+        }, 5000); 
 
-        // Limpieza del timeout
         return () => clearTimeout(timer);
     }, [navigate]);
     
