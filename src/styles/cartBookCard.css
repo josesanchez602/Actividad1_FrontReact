@@ -51,12 +51,7 @@
 .info__add-button:hover,
 .info__remove-button:hover {
   transform: scale(1.2);
-  border: none;
+ 
 }
 
-
-.info__add-button:focus-visible,
-.info__remove-button:focus-visible {
-  outline: none;
-}
 
