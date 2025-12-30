@@ -63,3 +63,9 @@
   background-color: #b7e1b2;
   color: #213547;
 }
+
+.BookCard__add--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
