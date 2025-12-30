@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { books } from "../../data/book.js";
 import { useCart } from '../context/CartContext.jsx';
+import { AddBookButton } from "../components/AddBookButton.jsx"
 import "../../styles/BookView.css";
 
 export const BookDetail = () => {
@@ -36,11 +37,7 @@ return (
         <h3 className="bookv-detail__author">Autor: {book.author}</h3>
         <h3 className="bookv-detail__genre">Género: {book.genre}</h3>
         <p className="bookv-detail__price">Precio: ${book.price.toFixed(2)}</p>
-        <button
-          className="bookv-detail__button--cart bg-gray-500"
-          onClick={() => addBook(book)}>
-            Añadir al carrito
-        </button>
+        <AddBookButton book={book}/>
       </div>
     </div>
 

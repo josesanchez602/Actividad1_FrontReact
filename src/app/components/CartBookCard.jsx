@@ -1,6 +1,7 @@
 import { useCart } from "../context/CartContext";
 import "../../styles/cartBookCard.css"
-
+import CartBookAddButton from "./CartBookAddButton";
+import CartBookRemoveButton from "./CartBookRemoveButton";
 export default function CartBookCard({ book }) {
   const { addBook, removeBook } = useCart();
 
@@ -12,16 +13,9 @@ export default function CartBookCard({ book }) {
         <div className="book__info">
           <p className="info__name">{book.title}</p>
           <p className="info__price">{book.price} €</p>
-          <button
-            className="info__remove-button"
-            onClick={() => removeBook(book)}
-          >
-            <i className="fa-solid fa-circle-minus"></i>
-          </button>
+          <CartBookRemoveButton book={book}/>
           <a>{book.quantity} uds</a>
-          <button className="info__add-button" onClick={() => addBook(book)}>
-            <i className="fa-solid fa-circle-plus"></i>
-          </button>
+          <CartBookAddButton book={book}/>
         </div>
       </li>
     </>

@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom'
-import { SearchBar } from './SearchBar.jsx'
+import  {SearchBar}  from './SearchBar.jsx'
 import CartButton from './CartButton'
 import { useSearch } from '../context/SearchContext'
 import "../../styles/Navbar.css";

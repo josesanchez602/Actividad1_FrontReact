@@ -1,0 +1,14 @@
+.bookv-detail__button--cart{
+  
+  width: max-content;
+  color: white;
+  text-align: center;
+  display: block;
+  width: 100%;
+  background-color: green;
+}
+
+.bookv-detail__button--cart:hover{
+  color: white;
+  background-color: rgba(0, 128, 0, 0.719);
+}

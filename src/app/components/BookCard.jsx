@@ -1,5 +1,6 @@
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
+import { AddBookButton } from "./AddBookButton";
 import "../../styles/BookCard.css";
 
 export function BookCard( {book} ) {
@@ -13,9 +14,7 @@ export function BookCard( {book} ) {
                 <button className="BookCard__title" onClick={ () => navigate(`/books/${book.id}`) }>{book.title}</button>
                 <p className="BookCard__author">by {book.author}</p>
                 <div className="BookCard__actions">
-                    <button className="BookCard__add"
-                        onClick={() => addBook(book)}>Añadir ${book.price.toFixed(2)}
-                    </button>
+                    <AddBookButton book= {book}/>
                 </div>
             </div>
         </div>
