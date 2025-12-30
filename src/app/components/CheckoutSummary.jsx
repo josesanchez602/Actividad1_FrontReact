@@ -9,7 +9,7 @@ export const CheckoutSummary = ({
   
   return (
     <aside className="checkout__summary mt-8 md:mt-0 md:w-5/12">
-      <div className="bg-white rounded-xl border p-5 text-sm mb-4">
+      <div className="bg-white rounded-xl border border-gray-50 p-5 text-sm mb-4">
         <h2 className="text-lg font-semibold mb-4">
           Resumen de tu pedido
         </h2>

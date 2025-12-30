@@ -25,8 +25,7 @@ export const CartProvider = ({ children }) => {
   };
 
   /*
-  Quita el libro del carrito, de momento lo quita entero 
-  sin importar la cantidad de ese libro
+  Quita una unidad del libro del carrito
    */
   const removeBook = (book) => {
     setCart((prev) => {
@@ -42,11 +41,16 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+/*
+  Quita todas las  unidades del libro del carrito
+   */
   const removeAllBook = (book)=> {
     setCart((prev) =>{
       return prev.filter((b) => b.id !== book.id);
     });
   };
+
+  /*Vaciar el carrito*/
   const clearCart = () => setCart([]);
 
   //se cuentan todos los libros + las cantidades de cada uno

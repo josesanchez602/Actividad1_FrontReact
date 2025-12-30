@@ -2,7 +2,7 @@
 import CartBookAddButton from "./CartBookAddButton";
 import CartBookRemoveButton from "./CartBookRemoveButton";
 
-export const CheckoutItem = ({ book, addBook, removeBook, removeAllBook }) => {
+export const CheckoutItem = ({ book, removeAllBook }) => {
   return (
     <div className="checkout__item bg-white rounded-xl border border-gray-50 shadow-sm overflow-hidden">
       <div className="checkout__item-content flex items-center gap-4 p-4">
@@ -41,24 +41,11 @@ export const CheckoutItem = ({ book, addBook, removeBook, removeAllBook }) => {
 
         <div className="checkout__quantity flex flex-col items-end gap-2">
           <div className="inline-flex items-center border rounded-md overflow-hidden">
-            {/*<button
-              type="button"
-              onClick={() => removeBook(book)}
-              className="px-2 py-1 text-sm text-gray-600 hover:bg-gray-100"
-            >
-              −
-            </button>*/}
+        
             <CartBookRemoveButton book={book} />
-            <span className="px-3 py-1 text-sm">
-              {book.quantity}
-            </span>
-            {/*<button
-              type="button"
-              onClick={() => addBook(book)}
-              className="px-2 py-1 text-sm text-gray-600 hover:bg-gray-100"
-            >
-              +
-            </button>*/}
+            
+            <span className="px-3 py-1 text-sm">{book.quantity}</span>
+            
             <CartBookAddButton book={book} />
           </div>
 
